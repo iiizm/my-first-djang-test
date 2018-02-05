@@ -1,0 +1,215 @@
+<html>
+<meta charset="UTF-8">
+<link href="src/jquery.minical.css" rel="stylesheet" type="text/css">
+
+<head>
+  <title>
+    빅데이터 분석모듈
+  </title>
+  <style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    height: 100%;
+    /*background: rgb(0, 32, 96);*/
+  }
+  .full {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*margin: 80px auto;*/
+    /*border: 1px solid #bcbcbc;*/
+  }
+
+  .header {
+    width: 100%;
+    height: 125px;
+    border: 1px solid black;
+    float: left;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+    height: 550px;
+    float: left;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
+
+  .collection_range {
+    width: 320px;
+    height: 320px;
+    float: left;
+    border: 1px solid black;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .keyword {
+    width: 320px;
+    height: 320px;
+    float: left;
+    border: 1px solid black;
+    margin-right: 20px;
+
+  }
+
+  .collection_period {
+    width: 320px;
+    height: 320px;
+    float: left;
+    border: 1px solid black;
+  }
+
+  .title_box {
+    display: table;
+    width: 100%;
+    height: 65px;
+    background: rgb(88, 119, 166);
+    margin-bottom: 20px;
+  }
+
+  .title_box_inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .site {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100%;
+    border: 1px solid black;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .checkbox {
+    width: 200px;
+    height: 100%;
+    float: left;
+  }
+
+  .form-control {
+    width: 80px;
+  }
+
+  .foo {
+    width: 100%;
+    float: left;
+    bottom: 0;
+    border: 1px solid black;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="full">
+    <div class="header">
+      <p>
+        빅데이터 수집(수집대상으로 포털사이트 선택한 경우)
+      </p>
+      <p>
+        분석을 위한 데이터를 업로드하고, 편집 또는 다운로드 한 후 분석단계로 넘어가는 곳 입니다.
+      </p>
+    </div>
+    <div class="container">
+      <div class="collection_range">
+        <div class="title_box">
+          <div class="title_box_inner">
+            <span class="title_text">수집 범위</span>
+          </div>
+        </div>
+
+        <div class="site naver">
+          <div class="logo">
+
+          </div>
+          <div class="checkbox">
+            <br />
+            <input type="checkbox" name="chk_info" value="all">전체<br />
+            <input type="checkbox" name="chk_info" value="blog">블로그
+            <input type="checkbox" name="chk_info" value="news">뉴스
+          </div>
+        </div>
+
+        <div class="site daum">
+          <div class="logo">
+
+          </div>
+          <div class="checkbox">
+            <br />
+            <input type="checkbox" name="chk_info" value="all">전체<br />
+            <input type="checkbox" name="chk_info" value="blog">블로그
+            <input type="checkbox" name="chk_info" value="news">뉴스
+          </div>
+        </div>
+      </div>
+
+      <div class="keyword">
+        <div class="title_box">
+          <div class="title_box_inner">
+            <span class="title_text">분석 키워드</span>
+          </div>
+        </div>
+
+        <div class="input_text">
+          <input type="text" name="keyword">
+          <br />
+          <br />
+          <input type="checkbox" name="chk_info" value="title">제목만 수집
+          <br />
+          <br />
+          <span>본문전체가 아니라 분석키워드와 관련하여 제목만 수집하므로 용량을 줄일 수 있습니다</span>
+        </div>
+      </div>
+
+      <div class="collection_period">
+        <div class="title_box">
+          <div class="title_box_inner">
+            <span class="title_text">수집 기간</span>
+          </div>
+        </div>
+
+        <div class="select_date">
+          <form class="demo-1">
+            <input type='text' class="form-control">
+            <input type='text' class="form-control">
+          </form>
+          <h5>수집 단위</h5>
+          <input type="radio" name="radio_info" value="none">미사용
+          <input type="radio" name="radio_info" value="day">하루
+          <input type="radio" name="radio_info" value="week">일주일
+          <input type="radio" name="radio_info" value="month">한달
+          <input type="radio" name="radio_info" value="year">일년
+        </div>
+      </div>
+    </div>
+
+    <div class="foo">
+      foot
+    </div>
+
+  </div>
+
+  <script src="src/jquery-1.11.3.min.js"></script>
+  <script src="src/jquery.minical.js"></script>
+  <script>
+  $("form.demo-1 :text").minical();
+
+  </script>
+
+
+</body>
+</html>
